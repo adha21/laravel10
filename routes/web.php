@@ -32,3 +32,10 @@ Route::get('/', function () {
 // Route::get('/hello/hello1', function () {
 //     echo "Hello World";
 // });
+
+Route::get('mahasiswa', function () {
+    $kelas = "IS62";
+    $data = ["Khalifa","Adha","Sailijar","Aidil"];
+
+    return view('mahasiswa.index',compact('kelas','data'));
+});
