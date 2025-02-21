@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/contoh', function () {
+//     return view('contoh');
+// });
+
+// Route::fallback(function () {
+//     return view('notfound');
+// });
+
+// Route::get('mahasiswa/{nama}', function ($nama) {
+//     echo "Ini adalah data $nama";
+// });
+
+// Route::get('/hello/hello1', function () {
+//     echo "Hello World";
+// });
