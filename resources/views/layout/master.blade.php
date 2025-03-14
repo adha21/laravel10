@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    <title>Document</title>
+    @yield('css')
+    <title>@yield('title')</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
@@ -17,13 +18,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/mahasiswa">Mahasiswa</a>
+                    <a class="nav-link @yield('MenuMhs')" aria-current="page" href="/mahasiswa">Mahasiswa</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/dosen">Dosen</a>
+                    <a class="nav-link @yield('MenuDos')" href="/dosen">Dosen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/galeri">Galeri</a>
+                    <a class="nav-link @yield('MenuGal')" href="/galeri">Galeri</a>
                 </li>
 
                 </ul>
@@ -35,27 +36,10 @@
         </div>
     </nav>
 
-    <div class="container text-center mt-3 bg-white">
-        <h2 class="mb-3">Data mahasiswa</h2>
-        <div class="row">
-            <div class="m-auto col-6">
-                <ol class="list-group">
-                    @forelse ($data_mhs as $mhs)
-                        <li class="list-group-item">{{$mhs}}</li>
-                    @empty
-                    <div class="alert alert-secondary" role="alert">
-                        Maaf, Data Mahasiswa Tidak Tersedia
-                    </div>
-                    @endforelse
-                </ol>
-            </div>
-        </div>
-
-        {{-- konten --}}
-    </div>
+    @yield('konten')
 
     <footer class="fixed-bottom bg-dark text-white py-2 mt-4 text-center">
-        Copyright &copy; Adha Mastalul A'la - 2025
+        Copyright &copy; Maulian Saputra - 2025
     </footer>
 
 
