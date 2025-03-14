@@ -55,7 +55,7 @@
     </div>
 
     <footer class="fixed-bottom bg-dark text-white py-2 mt-4 text-center">
-        Copyright &copy; Maulian Saputra - 2025
+        Copyright &copy; Adha Mastalul A'la - 2025
     </footer>
 
 
