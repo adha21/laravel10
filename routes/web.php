@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('welcome');
 });
 
-// Route::get('/contoh', function () {
+// Route::get('/cth', function () {
 //     return view('contoh');
 // });
 
@@ -25,31 +25,32 @@ Route::get('/', function () {
 //     return view('notfound');
 // });
 
-// Route::get('mahasiswa/{nama}', function ($nama) {
-//     echo "Ini adalah data $nama";
-// });
+// // Route::get('mahasiswa/{nama}', function ($nama) {
+// //     echo "Ini Halaman Mahasiswa dengan Nama $nama";
+// // });
 
-// Route::get('/hello/hello1', function () {
+// Route::get('/hello/hello2/hellolagi', function () {
 //     echo "Hello World";
 // });
 
-// Route::get('mahasiswa', function () {
-//     $kelas = "IS62";
-//     $data = ["Khalifa","Adha","Sailijar","Abdul"];
+// Route::get('/mahasiswa', function () {
+//     $kelas = "IS63";
+//     $data = ["Khalifah","Herdio","Badri","Raihan","Putri","Hanif"];
 
+//     // return view('mahasiswa.index')->with('mhs',$data)->with('kls',$kelas);
 //     return view('mahasiswa.index',compact('kelas','data'));
 // });
 
 // Route::get('/mahasiswa', function () {
-//     $nama = "Adha Mastalul";
-//     $nilai = 87;
+//     $nama = "Herdio Saputra";
+//     $nilai = -40;
 
-//     $nilai2 = [85,70,50,30,80];
+//     $nilai2 = [85,70,50,70,35,100];
 
-//     return view('mahasiswa', compact('nama','nilai','nilai2'));
+//     return view('mahasiswa',compact('nama','nilai','nilai2'));
 // });
 
-Route::get('/master', function () {
+Route::get('/', function () {
     $data_mhs = ["Abdul","Adha","Aidil","Alif","Asfal"];
     return view('layout.master',compact('data_mhs'));
 });
