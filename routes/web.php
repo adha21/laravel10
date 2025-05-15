@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\dosenController;
+use App\Http\Controllers\mahasiswaController;
 
 
 /*
@@ -52,25 +54,33 @@ Route::get('/home', function () {
 //     return view('mahasiswa',compact('nama','nilai','nilai2'));
 // });
 
-Route::get('/', function () {
-    $data_mhs = ["Abdul","Adha","Aidil","Alif","Asfal"];
-    return view('layout.master',compact('data_mhs'));
-});
+// Route::get('/', function () {
+//     $data_mhs = ["Abdul","Adha","Aidil","Alif","Asfal"];
+//     return view('layout.master',compact('data_mhs'));
+// });
 
-Route::get('/mahasiswa', function () {
-    $data_mhs = ["Abdul","Adha","Aidil","Alif","Asfal"];
-    return view('data.mahasiswa',compact('data_mhs'));
-});
+// Route::get('/mahasiswa', function () {
+//     $data_mhs = ["Abdul","Adha","Aidil","Alif","Asfal"];
+//     return view('data.mahasiswa',compact('data_mhs'));
+// });
 
-Route::get('/dosen', function () {
-    $data_dos = ["Ismanuddin","Mustofa Lutfi","Rita Warni","Ridha Ansari","Dzulgunar M Nasir"];
-    return view('data.dosen',compact('data_dos'));
-});
+// Route::get('/dosen', function () {
+//     $data_dos = ["Ismanuddin","Mustofa Lutfi","Rita Warni","Ridha Ansari","Dzulgunar M Nasir"];
+//     return view('data.dosen',compact('data_dos'));
+// });
 
-Route::get('/galeri', function () {
-    return view('data.galeri');
-});
+// Route::get('/galeri', function () {
+//     return view('data.galeri');
+// });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Data Mahasiswa
+Route::get('/mahasiswa', [mahasiswaController::class, 'index']);
+Route::get('/mahasiswa/tambah', [mahasiswaController::class, 'create']);
+
+//Data Dosen
+Route::get('/dosen', [dosenController::class, 'index']);
+Route::get('/dosen/tambah', [dosenController::class, 'create']);
