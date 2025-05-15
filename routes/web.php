@@ -83,4 +83,5 @@ Route::get('/mahasiswa/tambah', [mahasiswaController::class, 'create']);
 
 //Data Dosen
 Route::get('/dosen', [dosenController::class, 'index']);
-Route::get('/dosen/tambah', [dosenController::class, 'create']);
+Route::post('/dosen/add', [DosenController::class, 'store'])->name('dosen.store');
+Route::get('/dosen/add', [dosenController::class, 'create']);
