@@ -2,34 +2,36 @@
 
 @section('content')
 <div class="container">
-    <div class="row mt-5">
-        <div class="col-8 m-auto">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-dark-subtle">
-                    <h3 class="float-start fw-bold">{{ __('DATA DOSEN') }}</h3>
-                    <span class="float-end btn btn-primary">
-                        <a class="text-light" href="dosen/create"> <i class="fa-solid fa-user-plus"></i> Add </a>
-                    </span>
-                </div>
+                <div class="card-header"><a href="/dosen/tambah" class="btn btn-primary btn-sm">Tambah Data</a></div>
+
                 <div class="card-body">
-                    <table class="table table-striped">
+
+                    <table class="table">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>NIDN</th>
-                                <th>Nama</th>
-                                <th>Email</th>
+                                <th scope="col">#</th>
+                                <th scope="col">NIDN</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($dosens as $dosen)
                             <tr>
-                                <td>{{ $dosen->id }}</td>
-                                <td>{{ $dosen->nidn }}</td>
-                                <td>{{ $dosen->nama }}</td>
-                                <td>{{ $dosen->email }}</td>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                                <td>
+                                    <a href="" class="btn btn-warning btn-sm">detail</a>
+                                    <a href="" class="btn btn-info btn-sm">edit</a>
+                                    <a href="" class="btn btn-danger btn-sm">hapus</a>
+                                </td>
                             </tr>
-                            @endforeach
+
                         </tbody>
                     </table>
                 </div>

@@ -78,13 +78,11 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Data Mahasiswa
-Route::get('/mahasiswa', [mahasiswaController::class, 'index']);
-Route::get('/mahasiswa/tambah', [mahasiswaController::class, 'create']);
+// Route::get('/mahasiswa', [mahasiswaController::class, 'index']);
+// Route::get('/mahasiswa/tambah', [mahasiswaController::class, 'create']);
 
 //Data Dosen
-Route::get('/dosen', [dosenController::class, 'index'])->name('dosen.index');
-// Form Tambah Data Dosen
-Route::get('/dosen/create', [DosenController::class, 'create'])->name('dosens.create');
-// Simpan Data Dosen
-Route::post('/dosen', [DosenController::class, 'store'])->name('dosens.store');
+Route::get('/dosen', [dosenController::class, 'index']);
+Route::get('/dosen/tambah', [DosenController::class, 'create']);
+Route::post('/dosen', [dosenController::class, 'store']);
 
