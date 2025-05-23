@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <div class="float-end"><a href="/dosen/tambah" class="btn btn-primary btn-sm">Tambah Data</a></div>
+                    <div class="float-end"><a href="/dosen/tambah" class="btn btn-primary btn-sm"><i class="fa-solid fa-user-plus"></i>Tambah Data</a></div>
                 </div>
 
                 <div class="card-body">
@@ -22,17 +22,22 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @forelse ($dosen as $data)
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <th scope="row">{{ $nomor++ }}</th>
+                                <td>{{ $data->nidn }}</td>
+                                <td>{{ $data->nama }}</td>
+                                <td>{{ $data->email }}</td>
                                 <td>
-                                    <a href="" class="btn btn-warning btn-sm">detail</a>
-                                    <a href="" class="btn btn-info btn-sm">edit</a>
-                                    <a href="" class="btn btn-danger btn-sm">hapus</a>
+                                    <a href="" class="btn btn-warning btn-sm"><i class="fa-solid fa-circle-info"></i>detail</a>
+                                    <a href="" class="btn btn-info btn-sm"><i class="fa-solid fa-pen-to-square"></i>edit</a>
+                                    <a href="" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i>hapus</a>
                                 </td>
                             </tr>
+                            @empty
+
+                            @endforelse
+
 
                         </tbody>
                     </table>
