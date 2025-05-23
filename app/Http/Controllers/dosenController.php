@@ -16,7 +16,7 @@ class dosenController extends Controller
         $nomor = 1;
         $dosen = Dosen::all();
         return view('Dosen.index',compact('dosen','nomor'));
-        
+
     }
 
     /**
@@ -59,6 +59,8 @@ class dosenController extends Controller
     public function edit(string $id)
     {
         // form edit
+        $dosen = Dosen::find($id);
+        return view('Dosen.edit',compact('dosen'));
     }
 
     /**

@@ -85,4 +85,4 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/dosen', [dosenController::class, 'index']);
 Route::get('/dosen/tambah', [DosenController::class, 'create']);
 Route::post('/dosen', [dosenController::class, 'store']);
-
+Route::get('/dosen/edit/{id}', [dosenController::class, 'edit']);
