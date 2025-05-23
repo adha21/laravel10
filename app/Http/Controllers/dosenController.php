@@ -86,5 +86,9 @@ class dosenController extends Controller
     public function destroy(string $id)
     {
         // proses hapus
+        $dosen = Dosen::find($id);
+        $dosen->delete();
+
+        return redirect('/dosen');
     }
 }
