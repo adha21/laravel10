@@ -86,3 +86,4 @@ Route::get('/dosen', [dosenController::class, 'index']);
 Route::get('/dosen/tambah', [DosenController::class, 'create']);
 Route::post('/dosen', [dosenController::class, 'store']);
 Route::get('/dosen/edit/{id}', [dosenController::class, 'edit']);
+Route::put('/dosen/{id}', [dosenController::class, 'update']);
